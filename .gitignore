@@ -1,0 +1,25 @@
+# Dependency directories
+/node_modules
+/.pnp
+.pnp.js
+
+# Build artifacts
+/dist
+/out
+/.tscache
+
+# Editor-specific files
+/.vscode
+/.idea
+*.sublime-*
+*.swp
+
+# Environment variables
+.env
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

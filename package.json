@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "simple calculator",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asleonova/calculator.git"
+  },
+  "keywords": [],
+  "author": "codinggirl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asleonova/calculator/issues"
+  },
+  "homepage": "https://github.com/asleonova/calculator#readme",
+  "devDependencies": {
+    "jasmine": "^5.0.0"
+  }
+}
