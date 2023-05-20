@@ -5,8 +5,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "test:e2e:local": "wdio run wdio.local.conf.ts",
-    "start": "http-server"
+    "test:e2e:local": "npm-run-all -p -r wdio run wdio.local.conf.ts http-server"
   },
   "repository": {
     "type": "git",
