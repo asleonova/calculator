@@ -6,11 +6,15 @@
     "rootDir": "./src",
     "strict": false
   },
+  "moduleResolution": "node",
+  "types": ["node", "@wdio/globals/types", "@wdio/jasmine-framework"],
+  "allowSyntheticDefaultImports": true,
+  "allowImportingTsExtensions": true,
   "include": [
-    "src/**/*.ts",
+    "src/**/*.ts"
     // "./wdio.conf.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"],
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true
 }

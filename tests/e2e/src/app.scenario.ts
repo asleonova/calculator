@@ -1,46 +1,57 @@
-import { browser } from "@wdio/globals";
+import { $ } from "@wdio/globals";
+import Page from "./pageobjects/page";
 
-describe('Calculator Application', () => {
-  let page: any;
+describe("Calculator Application", () => {
+  let page: Page;
+  page = new Page();
 
   beforeEach(async () => {
-    page = await browser.newPage();
-    await page.goto('http://localhost:8080/src/index.html');
+    page.open();
   });
 
-  afterEach(async () => {
-    await page.close();
+  afterEach(async () => {});
+
+  it("should add two numbers and display the result", async () => {
+    const nb1 = $("#number1");
+    const nb2 = $("#number2");
+    await nb1.setValue(1);
+    await nb2.setValue(2);
+
+    await $("#add").click();
+    const resultText = await $("#result").getText();
+    expect(resultText).toBe("Result: 3");
   });
 
-  it('should add two numbers and display the result', async () => {
-    await page.fill('#number1', '2');
-    await page.fill('#number2', '3');
-    await page.click('#add');
-    const resultText = await page.innerText('#result');
-    expect(resultText).toBe('Result: 5');
+  it("should subtract two numbers and display the result", async () => {
+    const nb1 = $("#number1");
+    const nb2 = $("#number2");
+    await nb1.setValue(5);
+    await nb2.setValue(3);
+
+    await $("#subtract").click();
+    const resultText = await $("#result").getText();
+    expect(resultText).toBe("Result: 2");
   });
 
-  it('should subtract two numbers and display the result', async () => {
-    await page.fill('#number1', '5');
-    await page.fill('#number2', '3');
-    await page.click('#subtract');
-    const resultText = await page.innerText('#result');
-    expect(resultText).toBe('Result: 2');
+  it("should multiply two numbers and display the result", async () => {
+    const nb1 = $("#number1");
+    const nb2 = $("#number2");
+    await nb1.setValue(2);
+    await nb2.setValue(3);
+
+    await $("#multiply").click();
+    const resultText = await $("#result").getText();
+    expect(resultText).toBe("Result: 6");
   });
 
-  it('should multiply two numbers and display the result', async () => {
-    await page.fill('#number1', '2');
-    await page.fill('#number2', '3');
-    await page.click('#multiply');
-    const resultText = await page.innerText('#result');
-    expect(resultText).toBe('Result: 6');
-  });
+  it("should divide two numbers and display the result", async () => {
+    const nb1 = $("#number1");
+    const nb2 = $("#number2");
+    await nb1.setValue(6);
+    await nb2.setValue(3);
 
-  it('should divide two numbers and display the result', async () => {
-    await page.fill('#number1', '6');
-    await page.fill('#number2', '3');
-    await page.click('#divide');
-    const resultText = await page.innerText('#result');
-    expect(resultText).toBe('Result: 2');
+    await $("#divide").click();
+    const resultText = await $("#result").getText();
+    expect(resultText).toBe("Result: 2");
   });
 });
