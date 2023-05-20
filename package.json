@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "simple calculator",
   "scripts": {
-    "build": "tsc",
+    "build": "webpack --config webpack.config.js",
     "start": "node dist/main.js",
-    "test": "jasmine"
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "build:e2e": "ts-node node_modules/.bin/tsc -p tests/e2e/tsconfig.json",
+    "e2e": "wdio run dist/wdio.conf.ts",
+    "wdio": "wdio run ./wdio.conf.ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,22 @@
   },
   "homepage": "https://github.com/asleonova/calculator#readme",
   "devDependencies": {
-    "jasmine": "^5.0.0"
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^20.2.0",
+    "@wdio/cli": "^8.10.4",
+    "@wdio/jasmine-framework": "^8.10.4",
+    "@wdio/local-runner": "^8.10.4",
+    "jasmine": "^5.0.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "wdio-chromedriver-service": "^8.1.1",
+    "webdriverio": "^8.10.4",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "tsconfig-paths": "^4.2.0",
+    "wdio": "^6.0.1"
   }
 }

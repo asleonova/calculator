@@ -7,8 +7,7 @@
     "strict": false
   },
   "include": [
-    "src/**/*.ts",
-    // "./wdio.conf.ts"
+    "src/**/*.scenario.ts"
   ],
   "exclude": [
     "node_modules"
