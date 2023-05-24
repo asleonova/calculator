@@ -1,7 +1,7 @@
 import { $ } from "@wdio/globals";
 import Page from "./pageobjects/page";
 
-describe("Calculator Application", () => {
+fdescribe("Calculator Application", () => {
   let page: Page;
   page = new Page();
 
