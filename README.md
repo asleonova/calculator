@@ -7,9 +7,9 @@
 run `npm install` to install all dependencies.
 
 ## to run tests use:
-`npm run build` to build the project
-`npm run test` to execute unit tests
-`npm run test:e2e:local` to execute end-to-end tests
-`npm run start` to start the server
+* `npm run build` to build the project
+* `npm run test` to execute unit tests
+* `npm run test:e2e:local` to execute end-to-end tests
+* `npm run start` to start the server
 
 > ⚠️ **to run end-to-end tests don't forget to run the server in the other terminal tab**
